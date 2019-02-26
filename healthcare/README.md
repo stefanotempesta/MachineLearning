@@ -17,9 +17,24 @@ Technologies presented:
 ## Visual Studio Solution
 The Visual Studio 2017 solution in this folder contains the following objects:
 - DefaultController: Web API controller that implements the POST HTTP method only.
--- Input: A medical record, in JSON format.
--- Output: A JSON object containing the predicted score and accuracy.
+  ```
+  public IHttpActionResult Post(string medicalRecordJson)
+  ```
+  - Input: A medical record, in JSON format.
+  - Output: A JSON object containing the predicted score and accuracy.
 - Classification: C# class that implements the multiclass classification algorithm with ML.NET
--- TrainModel
--- EvaluateModel
--- Score
+  - TrainModel
+  ```
+  public void TrainModel(IDataSource<MedicalRecord> dataSource, Stream targetStream)
+  ```
+  - EvaluateModel
+  ```
+  public double EvaluateModel(IDataSource<MedicalRecord> dataSource, Stream modelStream)
+  ```
+  - Score
+  ```
+  public double Score(MedicalRecord medicalRecord, Stream modelStream)
+  ```
+- MedicalRecord: Input model
+- RiskPrediction: Output model
+- MedicalRecordDataSource: Connection to SQL Server using a SQL client driver
