@@ -21,7 +21,25 @@ The Visual Studio 2017 solution in this folder contains the following objects:
   public IHttpActionResult Post(string medicalRecordJson)
   ```
   - Input: A medical record, in JSON format.
+  ```
+  {
+  "age": 0,
+  "sex": 0,
+  "smoker": false,
+  "chestPain": 0,
+  "bloodPressure": 0,
+  "serumCholestoral": 0,
+  "fastingBloodSugar": false,
+  "maxHeartRate": 0
+  }
+  ```
   - Output: A JSON object containing the predicted score and accuracy.
+  ```
+  {
+  "score": 0.0,
+  "accuracy": 0.0
+  }
+  ```
 - Classification: C# class that implements the multiclass classification algorithm with ML.NET
   - TrainModel
   ```
