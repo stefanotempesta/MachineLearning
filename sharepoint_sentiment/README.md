@@ -17,30 +17,32 @@ The Visual Studio 2017 solution in this folder contains the following projects:
      public string Text { get; set; }
   }
   ```
-  - Web (SharePoint Site)
+- SharePoint Context
+  - Lists() returns a list an enumeration of SharePoint lists
   ```
-  public class Web
-  {
-    public IList<List> Lists { get { return _lists; } }
-    IList<List> _lists = new List<List>();
-  }
+  public IEnumerable<List> Lists()
   ```
-  - List (SharePoint List)
+  - List(title) returns a specific list by its title
   ```
-  public class List
-  {
-     public IList<ListItem> GetItems(CamlQuery query)
-     {
-        return new List<ListItem> { new ListItem() };
-     }
-  }
+  public List List(string title)
   ```
-  - ListItems
+  - ListItems(list) returns all items in the identified list
   ```
-  public class ListItem
-  {
-     public object this[string index] =>_fields[index];
-     IDictionary<string, object> _fields;
-  }
+  public IEnumerable<ListItem> ListItems(List list)
+  ```
+  - Comments(item) returns all comments made for the identified list item
+  ```
+  public IEnumerable<string> Comments(ListItem item)
+  ```
+
+### Sentiment Analysis
+- Program
+  - RetrieveSharePointComments() returns a collection of comments retrieved from SharePoint, using the SharePoint client library.
+  ```
+  public IList<string> RetrieveSharePointComments()
+  ```
+  - InvokeMachineLearningService(comments) invokes the ML service hosted on Azure Machine Learning
+  ```
+  public async Task InvokeMachineLearningService(IEnumerable<string> comments)
   ```
   
