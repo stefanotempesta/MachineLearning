@@ -5,9 +5,9 @@ Technologies presented:
 
 ###  Visual Studio Solution
 The Visual Studio 2017 solution in this folder contains the following projects:
-- CognitiveServicesClient: Class library that connects to Azure Cognitive Services for performing text analysy on a set of comments given in input. Operations supported are language detection and sentiment analysis.
-- SharePointClient: Class library that implements models and functions for retrieving comments from news posted in a SharePoint site.
-- SentimentAnalysis: Console app that performs sentiment analysis of comments. Comments are retrieved by using the SharePoint client library and sentiment is analyzed with the Cognitive Services client library.
+- *CognitiveServicesClient*: Class library that connects to Azure Cognitive Services for performing text analysy on a set of comments given in input. Operations supported are language detection and sentiment analysis.
+- *SharePointClient*: Class library that implements models and functions for retrieving comments from news posted in a SharePoint site.
+- *SentimentAnalysis*: Console app that performs sentiment analysis of comments. Comments are retrieved by using the SharePoint client library and sentiment is analyzed with the Cognitive Services client library.
 
 ### Cognitive Services Client
 - Models
