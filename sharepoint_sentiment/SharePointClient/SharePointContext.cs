@@ -1,4 +1,5 @@
 ﻿using Microsoft.SharePoint.Client;
+using Microsoft.SharePoint.Client.Social;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,13 +49,29 @@ namespace SharePointClient
             return listItems.AsEnumerable();
         }
 
-        public IEnumerable<string> Comments(ListItem item)
+        public IEnumerable<SocialComment> Comments(ListItem item)
         {
-            var comments = item["Comments"] as SocialComment[];
+            SocialFeedManager feedManager = new SocialFeedManager(_context);
+            SocialFeedOptions feedOptions = new SocialFeedOptions();
+            ClientResult<SocialFeed> feed = feedManager.GetFeedFor(_context.Web.CurrentUser.LoginName, feedOptions);
+            _context.ExecuteQuery();
 
-            foreach (var comment in comments)
+            foreach (SocialThread thread in feed.Value.Threads)
             {
-                yield return comment.Text;
+                yield return new SocialComment
+                {
+                    Id = thread.Id,
+                    Text = thread.RootPost.Text
+                };
+
+                foreach (SocialPost post in thread.Replies)
+                {
+                    yield return new SocialComment
+                    {
+                        Id = post.Id,
+                        Text = post.Text
+                    };
+                }
             }
         }
 

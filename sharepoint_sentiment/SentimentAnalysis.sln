@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentimentAnalysis", "SentimentAnalysis\SentimentAnalysis.csproj", "{AA8A074B-105D-4FAE-B9E4-910EA1C84096}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointClient", "SharePointClient\SharePointClient.csproj", "{27CC896D-3345-4318-B2FB-A9BE330A0AF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CognitiveServicesClient", "CognitiveServicesClient\CognitiveServicesClient.csproj", "{CB12555E-A3F2-4EF4-A046-28DEF4411398}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{27CC896D-3345-4318-B2FB-A9BE330A0AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27CC896D-3345-4318-B2FB-A9BE330A0AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27CC896D-3345-4318-B2FB-A9BE330A0AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB12555E-A3F2-4EF4-A046-28DEF4411398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB12555E-A3F2-4EF4-A046-28DEF4411398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB12555E-A3F2-4EF4-A046-28DEF4411398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB12555E-A3F2-4EF4-A046-28DEF4411398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {646E3496-D7F7-49CF-885B-B7C31C527CB6}
 	EndGlobalSection
 EndGlobal
