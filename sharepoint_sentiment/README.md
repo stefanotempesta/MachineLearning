@@ -1,7 +1,7 @@
 ## SharePoint News Comments Sentiment Analysis
 Technologies presented:
 - SharePoint CSOM (Client Side Object Model)
-- Azure Machine Learning
+- Azure Cognitive Services Text Analysis
 
 ###  Visual Studio Solution
 The Visual Studio 2017 solution in this folder contains the following projects:
